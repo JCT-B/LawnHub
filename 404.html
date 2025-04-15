@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Linux</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .terminal-container {
+            background-color: #1a1a2e;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #e94560;
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+            font-family: 'JetBrains Mono', monospace;
+            overflow-x: hidden;
+        }
+        
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        
+        .terminal-title {
+            font-size: 1.2rem;
+            color: #e94560;
+        }
+        
+        .terminal-buttons {
+            display: flex;
+        }
+        
+        .term-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
+        
+        .term-close {
+            background-color: #e94560;
+        }
+        
+        .term-minimize {
+            background-color: #ffbd44;
+        }
+        
+        .term-maximize {
+            background-color: #00ca4e;
+        }
+        
+        .terminal-content {
+            line-height: 1.6;
+        }
+        
+        .prompt {
+            color: #00ca4e;
+            margin-right: 10px;
+        }
+        
+        .command {
+            color: #fff;
+        }
+        
+        .error {
+            color: #e94560;
+            margin: 10px 0;
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        .typed-text {
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0;
+            animation: typing 3.5s steps(40, end);
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0
+            }
+            to {
+                width: 100%
+            }
+        }
+        
+        .terminal-line {
+            margin: 10px 0;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background-color: #e94560;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background-color: #d13d56;
+            transform: translateY(-2px);
+        }
+        
+        .ascii-art {
+            color: #e94560;
+            font-size: 0.9rem;
+            line-height: 1.2;
+            margin: 0 0;
+            white-space: pre;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Linus & Richard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="2ndpage.html">Linux Kernel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="3rdpage.html">Hardships of Linux</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="term-btn term-close"></div>
+                    <div class="term-btn term-minimize"></div>
+                    <div class="term-btn term-maximize"></div>
+                </div>
+                <div class="terminal-title">bash - user@linux-machine:~</div>
+            </div>
+            <div class="terminal-content">
+                <div class="terminal-line">
+                    <span class="prompt">user@linux-machine:~$</span>
+                    <span class="command typed-text">cd /var/www/requested-page</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="error">bash: cd: /var/www/requested-page: No such file or directory</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">user@linux-machine:~$</span>
+                    <span class="command typed-text">locate requested-page</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="error">Error 404: File not found in the filesystem</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">user@linux-machine:~$</span>
+                    <span class="command">grep -r "page" /var/www/</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="command">Searching...</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="error">0 results found. The page you're looking for doesn't exist.</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">user@linux-machine:~$</span>
+                    <span class="command">sudo find / -name "requested-page"</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="error">[sudo] password for user: ********</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="error">find: No such file or directory</span>
+                </div>
+
+                <div class="ascii-art">
+                    _  _    ___  _  _          _   _  ____ _______   ______ ____  _    _ _   _ _____ <br>
+                    | || |  / _ \| || |        | \ | |/ __ \__   __| |  ____/ __ \| |  | | \ | |  __ \ <br>
+                    | || |_| | | | || |_ _____ |  \| | |  | | | |    | |__ | |  | | |  | |  \| | |  | | <br>
+                    |__   _| | | |__   _|-----|| . ` | |  | | | |    |  __|| |  | | |  | | . ` | |  | | <br>
+                       | | | | | |  | |        | |\  | | |  | | |    | |   | |__| | |__| | | \ | |__| | <br>
+                       |_|  \___/   |_|        |_| \_| \____/ |_|    |_|    \____/ \____/|_| \_|_____/ <br>
+
+                </div>
+
+                <div class="terminal-line">
+                    <span class="prompt">user@linux-machine:~$</span>
+                    <span class="command">echo "Try going back to the homepage"</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="command">Try going back to the homepage</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">user@linux-machine:~$</span>
+                    <span class="command blink">_</span>
+                </div>
+
+                <a href="index.html" class="back-button">Return to Homepage</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 <a href="https://github.com/JCT-B" target="_blank">Dilip</a>. All rights reserved. | <a href="mailto:contact@linuxfans.com" class="email-link">Contact Me</a></p>
+    </footer>
+</body>
+
+</html>
